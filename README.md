@@ -113,4 +113,4 @@ Se programó el lanzamiento del Modal de Bootstrap a través de JavaScript, el c
 
 El flujo completo y funcional puede probarse en vivo desde el siguiente enlace:
 
-🔗 **Enlace del proyecto:** [PEGAR ENLACE DE GITHUB PAGES AQUÍ]
+🔗 **Enlace del proyecto:** https://omarferxoo.github.io/Actividad5-ProyectoLogin/login.html
