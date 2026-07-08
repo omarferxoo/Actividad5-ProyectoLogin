@@ -77,7 +77,7 @@ function configurarFormularioUsuario() {
     const correo = document.getElementById("correoUsuario");
     const password = document.getElementById("passwordUsuario");
 
-    const nombreValido = nombre.value.trim().length >= 3;
+    const nombreValido = validarNombre(nombre.value);
     const correoValido = validarCorreo(correo.value);
     const passwordValido = validarPassword(password.value);
 
@@ -111,7 +111,7 @@ function configurarFormularioAlumno() {
     const numeroControl = document.getElementById("numeroControl");
     const edad = document.getElementById("edadAlumno");
 
-    const nombreValido = nombre.value.trim().length >= 3;
+    const nombreValido = validarNombre(nombre.value);
     const controlValido = validarNumeroControl(numeroControl.value);
     const edadValida = Number(edad.value) > 0 && Number(edad.value) <= 120;
 

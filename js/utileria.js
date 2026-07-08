@@ -15,6 +15,10 @@ function validarNumeroControl(numeroControl) {
   return /^\d{6}$/.test(String(numeroControl).trim());
 }
 
+function validarNombre(nombre) {
+  return /^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]{3,}$/.test(String(nombre).trim());
+}
+
 function esMayorDeEdad(edad) {
   return Number(edad) >= 18;
 }
