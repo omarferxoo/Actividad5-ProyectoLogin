@@ -16,7 +16,8 @@ Docente: Martinez Nieto Adelina
 
 Grupo: 7SD
 
-Alumno: Valencia Borja Omar Rutilio
+Alumnos: Valencia Borja Omar Rutilio            
+Antonio Mendez Angel Gabriel
 
 Numero de control: 22161258
 
