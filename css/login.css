@@ -136,6 +136,30 @@ h2 {
   transform: translateY(1px) !important;
 }
 
+.btn-success {
+  background: linear-gradient(135deg, #10b981, #059669) !important;
+  border: none !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25) !important;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  font-family: inherit;
+  font-weight: 600;
+  border-radius: 50rem !important;
+}
+
+.btn-success:hover,
+.btn-success:focus,
+.btn-success:active {
+  background: linear-gradient(135deg, #34d399, #059669) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(16, 185, 129, 0.4) !important;
+  color: #ffffff !important;
+}
+
+.btn-success:active {
+  transform: translateY(1px) !important;
+}
+
 .app-page {
   display: flex;
 }
@@ -266,19 +290,21 @@ h2 {
 }
 
 /* Dropdown del Usuario */
-#usuarioDropdown.btn-light {
-  background-color: #261835 !important;
+#usuarioDropdown.btn-outline-primary {
+  background-color: transparent !important;
   color: #ffffff !important;
-  border: 1px solid #4a2e6b !important;
+  border: 2px solid #8e54e9 !important;
   font-family: inherit;
-  border-radius: 12px;
-  transition: all 0.2s ease;
+  transition: all 0.2s ease !important;
 }
 
-#usuarioDropdown.btn-light:hover,
-#usuarioDropdown.btn-light:focus {
-  background-color: #2b1c3c !important;
-  border-color: var(--accent) !important;
+#usuarioDropdown.btn-outline-primary:hover,
+#usuarioDropdown.btn-outline-primary:focus,
+#usuarioDropdown.btn-outline-primary:active {
+  background: linear-gradient(135deg, #8e54e9, #d946ef) !important;
+  border-color: transparent !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(217, 70, 239, 0.25) !important;
 }
 
 .dropdown-menu {
@@ -323,7 +349,7 @@ h2 {
   border: 1px solid #4a2e6b !important;
   color: #ffffff !important;
   border-radius: 12px !important;
-  padding: 12px 16px !important;
+  padding: 12px 16px;
   font-family: inherit;
   transition: all 0.3s ease !important;
 }
@@ -337,6 +363,35 @@ h2 {
 
 .form-control::placeholder {
   color: #635075 !important;
+}
+
+/* Ajustes específicos para Form-Floating de Bootstrap en modo oscuro */
+.form-floating > .form-control {
+  height: calc(3.5rem + 2px) !important;
+  padding-top: 1.625rem !important;
+  padding-bottom: 0.625rem !important;
+}
+
+.form-floating > .form-control::placeholder {
+  color: transparent !important;
+}
+
+.form-floating > .form-control:focus::placeholder {
+  color: #635075 !important;
+}
+
+.form-floating > label {
+  color: #635075 !important;
+  font-family: inherit;
+  padding: 1rem 0.75rem !important;
+  transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out !important;
+}
+
+.form-floating > .form-control:focus ~ label,
+.form-floating > .form-control:not(:placeholder-shown) ~ label {
+  color: #d946ef !important;
+  opacity: 0.85;
+  transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem) !important;
 }
 
 .form-label {
