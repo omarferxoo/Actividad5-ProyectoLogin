@@ -1,12 +1,12 @@
 :root {
-  --ink: #172033;
-  --muted: #667085;
-  --line: #d8dee9;
-  --surface: #ffffff;
-  --soft: #f3f6fb;
-  --primary: #1d4ed8;
-  --primary-dark: #183b8f;
-  --accent: #0f766e;
+  --ink: #ffffff;
+  --muted: #a395b0;
+  --line: #332244;
+  --surface: #1a1025;
+  --soft: #0b0710;
+  --primary: #8e54e9;
+  --primary-dark: #7a3ee0;
+  --accent: #d946ef;
 }
 
 * {
@@ -17,8 +17,12 @@ body {
   min-height: 100vh;
   margin: 0;
   color: var(--ink);
-  background: var(--soft);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--soft);
+  background-image:
+    radial-gradient(at 0% 0%, rgba(107, 33, 168, 0.15) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(217, 70, 239, 0.1) 0px, transparent 50%);
+  background-attachment: fixed;
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
 .login-page {
@@ -26,9 +30,12 @@ body {
   place-items: center;
   padding: 24px;
   background:
-    linear-gradient(rgba(23, 32, 51, 0.68), rgba(23, 32, 51, 0.68)),
+    linear-gradient(rgba(11, 7, 16, 0.85), rgba(11, 7, 16, 0.85)),
     url("../img/logoportada.png") center 12% / 280px no-repeat,
-    #e9eef7;
+    radial-gradient(at 0% 0%, rgba(107, 33, 168, 0.25) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(217, 70, 239, 0.15) 0px, transparent 50%),
+    #0b0710;
+  background-attachment: fixed;
 }
 
 .login-shell {
@@ -39,13 +46,25 @@ body {
 .panel {
   width: 100%;
   border: 1px solid var(--line);
-  border-radius: 8px;
+  border-radius: 20px;
   background: var(--surface);
-  box-shadow: 0 18px 45px rgba(17, 24, 39, 0.14);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5),
+    0 0 2px rgba(157, 78, 221, 0.2) inset;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .login-card {
   padding: 28px;
+}
+
+.panel {
+  padding: 22px;
+}
+
+.panel:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6),
+    0 0 4px rgba(217, 70, 239, 0.3) inset;
 }
 
 .login-brand {
@@ -66,7 +85,7 @@ body {
   color: var(--accent);
   font-size: 0.76rem;
   font-weight: 700;
-  letter-spacing: 0;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
 }
 
@@ -74,23 +93,54 @@ h1,
 h2 {
   margin: 0;
   font-weight: 700;
+  color: #ffffff;
 }
 
-.login-brand h1 {
+.login-brand h1,
+.page-heading h1 {
   font-size: 1.55rem;
+  background: linear-gradient(135deg, #ffffff, #d946ef);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
+.panel h2 {
+  margin-bottom: 18px;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+/* Botones con estilos Premium del Ejercicio 17 */
 .btn-primary {
-  --bs-btn-bg: var(--primary);
-  --bs-btn-border-color: var(--primary);
-  --bs-btn-hover-bg: var(--primary-dark);
-  --bs-btn-hover-border-color: var(--primary-dark);
+  background: linear-gradient(135deg, #8e54e9, #d946ef) !important;
+  border: none !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(217, 70, 239, 0.25) !important;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  font-family: inherit;
+  font-weight: 600;
+  border-radius: 14px !important;
+  padding: 12px 24px;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+  background: linear-gradient(135deg, #9d68f0, #e166f2) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(217, 70, 239, 0.4) !important;
+  color: #ffffff !important;
+}
+
+.btn-primary:active {
+  transform: translateY(1px) !important;
 }
 
 .app-page {
   display: flex;
 }
 
+/* Sidebar Estilo Púrpura Oscuro */
 .sidebar {
   position: fixed;
   inset: 0 auto 0 0;
@@ -98,8 +148,9 @@ h2 {
   width: 260px;
   padding: 18px;
   overflow-y: auto;
-  color: #f8fafc;
-  background: #172033;
+  color: #ffffff;
+  background: #140c1c;
+  border-right: 1px solid var(--line);
   transition: transform 0.2s ease;
 }
 
@@ -112,7 +163,7 @@ h2 {
   align-items: center;
   gap: 12px;
   padding-bottom: 18px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+  border-bottom: 1px solid var(--line);
   font-weight: 700;
 }
 
@@ -121,7 +172,7 @@ h2 {
   height: 42px;
   object-fit: contain;
   border-radius: 8px;
-  background: white;
+  background: transparent;
 }
 
 .sidebar-nav {
@@ -137,11 +188,13 @@ h2 {
   align-items: center;
   justify-content: space-between;
   border: 0;
-  border-radius: 8px;
-  color: #e5e7eb;
+  border-radius: 12px;
+  color: var(--muted);
   background: transparent;
   text-align: left;
   text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
 }
 
 .sidebar-link {
@@ -151,14 +204,14 @@ h2 {
 .sidebar-sublink {
   margin-top: 6px;
   padding: 9px 12px 9px 28px;
-  color: #cbd5e1;
 }
 
 .sidebar-link:hover,
 .sidebar-sublink:hover,
 .sidebar-sublink.active {
   color: #ffffff;
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(157, 78, 221, 0.15);
+  border: 1px solid rgba(217, 70, 239, 0.2);
 }
 
 .app-content {
@@ -168,10 +221,11 @@ h2 {
   transition: margin-left 0.2s ease;
 }
 
-.sidebar.is-collapsed + .app-content {
+.sidebar.is-collapsed+.app-content {
   margin-left: 0;
 }
 
+/* Barra Superior Translúcida */
 .topbar {
   position: sticky;
   top: 0;
@@ -182,7 +236,7 @@ h2 {
   min-height: 68px;
   padding: 12px 24px;
   border-bottom: 1px solid var(--line);
-  background: rgba(255, 255, 255, 0.94);
+  background: rgba(26, 16, 37, 0.85);
   backdrop-filter: blur(10px);
 }
 
@@ -193,15 +247,56 @@ h2 {
   height: 42px;
   place-content: center;
   border: 1px solid var(--line);
-  border-radius: 8px;
-  background: white;
+  border-radius: 12px;
+  background: #261835;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.icon-button:hover {
+  border-color: var(--accent);
+  background: #2b1c3c;
 }
 
 .icon-button span {
   display: block;
   width: 18px;
   height: 2px;
-  background: var(--ink);
+  background: #ffffff;
+}
+
+/* Dropdown del Usuario */
+#usuarioDropdown.btn-light {
+  background-color: #261835 !important;
+  color: #ffffff !important;
+  border: 1px solid #4a2e6b !important;
+  font-family: inherit;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+#usuarioDropdown.btn-light:hover,
+#usuarioDropdown.btn-light:focus {
+  background-color: #2b1c3c !important;
+  border-color: var(--accent) !important;
+}
+
+.dropdown-menu {
+  background-color: #1a1025 !important;
+  border: 1px solid #332244 !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5) !important;
+  border-radius: 12px !important;
+}
+
+.dropdown-item {
+  color: var(--muted) !important;
+  font-family: inherit;
+  transition: all 0.2s ease;
+}
+
+.dropdown-item:hover {
+  background-color: #261835 !important;
+  color: #ffffff !important;
 }
 
 .main-area {
@@ -222,19 +317,112 @@ h2 {
   gap: 20px;
 }
 
-.panel {
-  padding: 22px;
+/* Campos de Formulario Adaptados a Modo Oscuro Morado */
+.form-control {
+  background-color: #261835 !important;
+  border: 1px solid #4a2e6b !important;
+  color: #ffffff !important;
+  border-radius: 12px !important;
+  padding: 12px 16px !important;
+  font-family: inherit;
+  transition: all 0.3s ease !important;
 }
 
-.panel h2 {
-  margin-bottom: 18px;
-  font-size: 1.2rem;
+.form-control:focus {
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 0 3px rgba(217, 70, 239, 0.15), 0 4px 12px rgba(0, 0, 0, 0.2) !important;
+  background-color: #2b1c3c !important;
+  color: #ffffff !important;
+}
+
+.form-control::placeholder {
+  color: #635075 !important;
+}
+
+.form-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+}
+
+/* Validación en Modo Oscuro */
+.form-control.is-valid {
+  border-color: #2e7d32 !important;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%232e7d32' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e") !important;
+}
+
+.form-control.is-valid:focus {
+  box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.25) !important;
+}
+
+.form-control.is-invalid {
+  border-color: #d32f2f !important;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23d32f2f'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23d32f2f'/%3e%3c/svg%3e") !important;
+}
+
+.form-control.is-invalid:focus {
+  box-shadow: 0 0 0 3px rgba(211, 47, 47, 0.25) !important;
+}
+
+.invalid-feedback {
+  color: #ff5858 !important;
+  font-size: 0.8rem;
+  margin-top: 6px;
+  font-weight: 500;
 }
 
 .form-message {
   min-height: 24px;
   margin-top: 12px;
   font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.form-message.text-success {
+  color: #4ade80 !important;
+}
+
+.form-message.text-danger {
+  color: #ff5858 !important;
+}
+
+.alert-danger {
+  background-color: #2a1420 !important;
+  color: #ff5858 !important;
+  border: 1px solid #5c2020 !important;
+  border-radius: 12px;
+  font-family: inherit;
+  font-size: 0.9rem;
+  padding: 12px 16px;
+}
+
+/* Modales con Estilo Oscuro Púrpura */
+.modal-content {
+  background-color: #1a1025 !important;
+  border: 1px solid #332244 !important;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6) !important;
+  border-radius: 20px !important;
+  color: #ffffff !important;
+}
+
+.modal-header,
+.modal-footer {
+  border-color: #332244 !important;
+}
+
+.modal-title {
+  font-weight: 700;
+  color: #ffffff;
+  background: linear-gradient(135deg, #ffffff, #d946ef);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.btn-close {
+  filter: invert(1) grayscale(1) brightness(2) !important;
 }
 
 @media (max-width: 860px) {
