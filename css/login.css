@@ -366,29 +366,29 @@ h2 {
 }
 
 /* Ajustes específicos para Form-Floating de Bootstrap en modo oscuro */
-.form-floating > .form-control {
+.form-floating>.form-control {
   height: calc(3.5rem + 2px) !important;
   padding-top: 1.625rem !important;
   padding-bottom: 0.625rem !important;
 }
 
-.form-floating > .form-control::placeholder {
+.form-floating>.form-control::placeholder {
   color: transparent !important;
 }
 
-.form-floating > .form-control:focus::placeholder {
+.form-floating>.form-control:focus::placeholder {
   color: #635075 !important;
 }
 
-.form-floating > label {
+.form-floating>label {
   color: #635075 !important;
   font-family: inherit;
   padding: 1rem 0.75rem !important;
   transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out !important;
 }
 
-.form-floating > .form-control:focus ~ label,
-.form-floating > .form-control:not(:placeholder-shown) ~ label {
+.form-floating>.form-control:focus~label,
+.form-floating>.form-control:not(:placeholder-shown)~label {
   color: #d946ef !important;
   opacity: 0.85;
   transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem) !important;
