@@ -1,0 +1,34 @@
+# Dependencies
+node_modules/
+vendor/
+
+# Environment variables and local secrets
+.env
+.env.*
+!.env.example
+
+# Generated builds and coverage
+dist/
+build/
+coverage/
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+tmp/
+temp/
+
+# Editor settings
+.vscode/
+.idea/
+*.code-workspace
+
+# Operating system files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Local caches
+.cache/
+.sass-cache/
